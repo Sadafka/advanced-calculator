@@ -25,7 +25,7 @@ python advanced_calculator.py
 
 ## 🚀 Author
 
-Created by [Sadaf](https://github.com/sadafka)
+Created by [Sadaf](https://github.com/Sadafka)
 
 ---
 
