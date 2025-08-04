@@ -1,6 +1,6 @@
-# Advanced Calculator
+# Advanced Calculator with History
 
-This is a simple **Python command-line calculator**.
+This is a simple **Python command-line calculator** with a **history feature**.
 
 ✅ **Features:**
 - Addition (+)
@@ -9,6 +9,7 @@ This is a simple **Python command-line calculator**.
 - Division (/)
 - Power (x^y)
 - Square Root (√x)
+- **NEW:** Shows history of previous calculations
 
 ---
 
@@ -18,7 +19,8 @@ This is a simple **Python command-line calculator**.
 2. Download the `advanced_calculator.py` file.
 3. Open a terminal or CMD.
 4. Navigate to the file’s location.
-5. Run:
+
+6. Run:
 python advanced_calculator.py
 
 ---
