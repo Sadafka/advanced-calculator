@@ -13,7 +13,7 @@ def divide(x, y):
     if y != 0:
         return x / y
     else:
-        return "cannot divide by zero!"
+        return "Cannot divide by zero!"
 
 def power(x, y):
     return x ** y
@@ -21,7 +21,10 @@ def power(x, y):
 def square_root(x):
     return math.sqrt(x)
 
-print('======== Simple Calculator ========')
+
+history = []
+
+print("====== Advanced Calculator with History ======")
 
 while True:
     print("\nSelect operation:")
@@ -31,32 +34,58 @@ while True:
     print("4. Division (/)")
     print("5. Power (x^y)")
     print("6. Square Root (√x)")
-    print("7. Exit")
-    
-    choice = input('Enter your choice (1,2,3,4,5,6,7): ')
-    
-    if choice == '7':
-        print("calculator closed. goodbye!")
+    print("7. Show History")
+    print("8. Exit")
+
+    choice = input("Enter choice (1/2/3/4/5/6/7/8): ")
+
+    if choice == '8':
+        print("Calculator closed. Goodbye!")
         break
-    
-    if choice in ('1', '2', '3', '4', '5'):
-        num1 = float(input('Enter first number: '))
-        num2 = float(input('Enter second number: '))
-        
+
+    elif choice == '7':
+        print("\nCalculation History:")
+        if history:
+            for item in history:
+                print(item)
+        else:
+            print("No calculations yet.")
+        continue
+
+    elif choice in ('1', '2', '3', '4', '5'):
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+
         if choice == '1':
-            print(f'Result: {num1} + {num2} = {add(num1, num2)}')
+            result = add(num1, num2)
+            print(f"Result: {num1} + {num2} = {result}")
+            history.append(f"{num1} + {num2} = {result}")
+
         elif choice == '2':
-            print(f'Result: {num1} - {num2} = {subtract(num1, num2)}')
+            result = subtract(num1, num2)
+            print(f"Result: {num1} - {num2} = {result}")
+            history.append(f"{num1} - {num2} = {result}")
+
         elif choice == '3':
-            print(f'Result: {num1} * {num2} = {multiply(num1, num2)}')
+            result = multiply(num1, num2)
+            print(f"Result: {num1} * {num2} = {result}")
+            history.append(f"{num1} * {num2} = {result}")
+
         elif choice == '4':
-            print(f'Result: {num1} / {num2} = {divide(num1, num2)}')
+            result = divide(num1, num2)
+            print(f"Result: {num1} / {num2} = {result}")
+            history.append(f"{num1} / {num2} = {result}")
+
         elif choice == '5':
-            print(f'Result: {num1} ^ {num2} = {power(num1, num2)}')
-    
+            result = power(num1, num2)
+            print(f"Result: {num1} ^ {num2} = {result}")
+            history.append(f"{num1} ^ {num2} = {result}")
+
     elif choice == '6':
-        num = float(input('Enter the number: '))
-        print(f'square root of {num} is {square_root(num)}')
-        
+        num = float(input("Enter the number: "))
+        result = square_root(num)
+        print(f"Square root of {num} is {result}")
+        history.append(f"√{num} = {result}")
+
     else:
-        print('Invalid input. Please enter a valid option.')
+        print("Invalid input. Please enter a valid option.")
